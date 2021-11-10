@@ -3,18 +3,21 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux';
 
-import './index.css';
+
 
 import reportWebVitals from './reportWebVitals';
 import { configureStore } from './store/configureStore';
 import Routes from './routes/Routes';
+import Layout from './components/MainLayout/MainLayout';
 
 const store = configureStore();
 
 ReactDOM.render(
   <BrowserRouter>
       <Provider store={store}>
-          <Routes/>
+          <Layout>
+            <Routes/>
+          </Layout>
       </Provider>
     </BrowserRouter>,
   document.getElementById('root')
