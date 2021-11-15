@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {LOCAL_STORAGE_KEYS} from '../constants/localStorageKeys'
 
 const baseURL = 'https://demo-api.it-shatle.by';
 
@@ -7,4 +8,14 @@ const config = {
 }
 
 const api = axios.create(config)
+
+api.interceptors.request.use((config) => {
+        const token = localStorage.getItem(LOCAL_STORAGE_KEYS.TOKEN);
+
+        config.headers.Authorization = `Bearer ${token}`;
+
+        return config;
+})
+
+
 export default api

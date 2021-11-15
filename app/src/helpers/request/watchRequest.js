@@ -39,5 +39,6 @@ function* sendRequest(action) {
 const isApiCallAction = (action) => action.type.endsWith(REQUEST_POSTFIX);
 function* apiCallsSaga() {
         yield takeEvery(isApiCallAction, sendRequest)
+        console.log("rere")
 }
 export default apiCallsSaga

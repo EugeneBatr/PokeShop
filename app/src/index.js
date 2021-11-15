@@ -1,24 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
-
-
+import { PersistGate } from "redux-persist/integration/react"
+import { persistStore } from 'redux-persist';
 
 import reportWebVitals from './reportWebVitals';
-import { configureStore } from './store/configureStore';
 import Routes from './routes/Routes';
 import Layout from './components/MainLayout/MainLayout';
+import store from './store/configureStore';
 
-const store = configureStore();
+
+const persistor = persistStore(store);
 
 ReactDOM.render(
   <BrowserRouter>
-      <Provider store={store}>
-          <Layout>
-            <Routes/>
-          </Layout>
-      </Provider>
+    <PersistGate loading={null} persistor={persistor}>
+        <Provider store={store}>
+            <Layout>
+              <Routes/>
+            </Layout>
+        </Provider>
+      </PersistGate>
     </BrowserRouter>,
   document.getElementById('root')
 );

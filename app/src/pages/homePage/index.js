@@ -1,9 +1,10 @@
+import styles from './styles.module.scss'
 
 
 const Home = () => {
         return (
-                <div>
-                        <h1>Home page</h1>
+                <div className={styles.wrapper}>
+                        <div className={styles.title}>Welcome to the secret shop</div>
                 </div>
         );
 };
