@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../routes/routeNames";
+import { NavBar } from "../NavBar";
+
+import styles from './styles.module.scss'
 
 const Header = () => {
         return (
-                <div>
-                        {Object.entries(ROUTES).map(([routeNames, path]) => (
-                                <Link to={path} key={routeNames}>
-                                        <button>{routeNames}</button>
-                                </Link>
-                        ))}
+                <div className={styles.wrapper}>
+                        <div></div>
+                        
+                                <NavBar/>
+                                
                 </div>
         );
 };
