@@ -11,7 +11,7 @@
 }
 
 .container {
-  height: 50vh;
+  height: 65vh;
   width: 60vh;
   border-radius: 5%;
   border: 3px solid black;
@@ -44,4 +44,9 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
+.error {
+  margin-bottom: 15px;
+  color: #d32f2f;
+  font-size: 40;
 }

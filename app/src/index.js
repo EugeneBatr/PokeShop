@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from "redux-persist/integration/react"
 import { persistStore } from 'redux-persist';
 
+import './index.css'
+
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes/Routes';
 import Layout from './components/MainLayout/MainLayout';

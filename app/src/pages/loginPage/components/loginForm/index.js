@@ -6,7 +6,7 @@ import { ROUTES } from '../../../../routes/routeNames'
 import Button from '@mui/material/Button';
 
 
-export const LoginForm = ({formValue, onChange, onSubmit}) => {
+export const LoginForm = ({formValue, onChange, onSubmit, error}) => {
         return (
                 <div className={styles.wrapper}>
                         <form onSubmit={onSubmit} className={styles.container} >
@@ -28,7 +28,8 @@ export const LoginForm = ({formValue, onChange, onSubmit}) => {
                                                 name='password'
                                                 onChange={onChange}
                                         />
-                                </div>        
+                                </div> 
+                                <div className={styles.error}>{error}</div>       
                                 <Button   variant='contained' color='error'   onClick={onSubmit} >
                                         Login
                                 </Button>
