@@ -24,6 +24,6 @@ export const NAV_CONFIG = {
                 {
                         label: 'Pokemons',
                         path: ROUTES.POKEMONS_PAGE
-                }
+                },
         ],
 }

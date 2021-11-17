@@ -6,6 +6,7 @@ import { LOG_IN_REQUEST } from '../actions'
 import { useCallback } from 'react'
 import { ROUTES } from '../../../routes/routeNames'
 import {  useHistory } from 'react-router-dom'
+import isEmail from 'validator/es/lib/isEmail'
 
 
 export const LoginPageContainer = () => {
@@ -17,11 +18,17 @@ export const LoginPageContainer = () => {
                 password:'',
         })
 
-        const {isAuth} = useSelector(state => state.auth);
-        
+        const {isAuth, error} = useSelector(state => state.auth);
+
+        const isEmailValid = isEmail(formData.email)
+        const isPasswordValue = formData.password.length > 0
+
         const handleSubmit = useCallback((event) => {
-                event.preventDefault();
+                if(isEmailValid && isPasswordValue) {
+                        event.preventDefault();
                         dispatch(LOG_IN_REQUEST(formData));
+                }
+                
                         
                 },[formData])
         
@@ -36,6 +43,7 @@ export const LoginPageContainer = () => {
 
         return (
                 <LoginForm
+                        error={error}
                         isAuth={isAuth}
                         formValue={formData}
                         onChange={handleChange}

@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 import styles from './styles.module.scss'
 
-export const RegisterForm = ({formValue, onChange, onSubmit}) => {
+export const RegisterForm = ({formValue, onChange, onSubmit, error}) => {
         return (
                 <div className={styles.wrapper}>
                         <form className={styles.container} onSubmit={onSubmit}>
@@ -58,6 +58,7 @@ export const RegisterForm = ({formValue, onChange, onSubmit}) => {
                                                 />
                                         </div>
                                 </div>
+                                <div className={styles.error}>{error}</div>
                                 <Button variant='contained' color='error' onClick={onSubmit}>
                                         signup
                                 </Button>
