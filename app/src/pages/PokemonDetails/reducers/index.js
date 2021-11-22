@@ -16,7 +16,7 @@ const pokemonDetailsPageReducer = handleActions({
         }),
         [actions.GET_POKEMON_DETAILS_SUCCESS]: (state, {payload}) => ({
                 ...state,
-                info: payload,
+                info: payload.response,
                 isLoading: false,
                 error: null,
         }),

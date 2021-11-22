@@ -4,4 +4,5 @@ export const ROUTES = {
         REGISTER: '/register',
         POKEMONS_PAGE: '/pokemons',
         POKEMONS_DETAILS: '/pokemons/:id',
+        CART: '/cart',
 }
