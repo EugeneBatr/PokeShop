@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import CustomPagination from '../../../components/CustomPagination/index'
+import { Button } from '@mui/material'
 
 
 const PokemonPageLayout = ({list, currentPage, handlePageChange, handleGoToDetails}) => {
@@ -13,6 +14,7 @@ const PokemonPageLayout = ({list, currentPage, handlePageChange, handleGoToDetai
                                 <div>{price}</div>
                                 <button onClick={() =>handleGoToDetails(id)}>Detail</button>
                                 </div>
+                                
                                 
                         ))}
                         </div>

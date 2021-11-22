@@ -1,4 +1,5 @@
 import {Switch, Route, Redirect} from 'react-router-dom'
+import { CartPageContainer } from '../pages/CartPage/container/CartPageContainer';
 import Home from '../pages/HomePage';
 import { LoginPageContainer } from '../pages/loginPage/containers/LoginPageContainer';
 import PokemonDetailsPageContainer from '../pages/PokemonDetails/containers/PokemonDetailsPageContainer';
@@ -16,6 +17,7 @@ const Routes = () => {
                         <Route  path={ROUTES.REGISTER} component={RegisterPageContainer}/>
                         <Route exact path={ROUTES.POKEMONS_PAGE} component={PokemonsPageContainer}/>
                         <Route path={ROUTES.POKEMONS_DETAILS} component={PokemonDetailsPageContainer}/>
+                        <Route path={ROUTES.CART} component={CartPageContainer}/>
                         <Redirect path='*' to={ROUTES.HOME}/>
                 </Switch>
         );

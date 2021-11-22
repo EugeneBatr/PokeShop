@@ -1,8 +1,10 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { CHANGE_PAGE, GET_POKEMONS_REQUEST } from '../actions'
 import PokemonPageLayout from '../components'
 import {useHistory} from 'react-router-dom'
+import { PUSH_CART_REQUEST } from '../../CartPage/actions'
+import api from "../../../http";
 
 const PokemonsPageContainer = () => {
         const dispatch = useDispatch()
@@ -21,6 +23,9 @@ const PokemonsPageContainer = () => {
         const handleGoToDetails = useCallback((id) => {
                 history.push(`/pokemons/${id}`)
         })
+
+       
+
         
         return <PokemonPageLayout 
         list={list} 
